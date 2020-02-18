@@ -48,7 +48,7 @@ class Main extends React.Component{
     scene.add( camera )
     let light = new THREE.DirectionalLight( 0xffffff, 0.5 )
     scene.add(light)
-    let ballGeo = new THREE.SphereGeometry( 3, 20, 20 );
+    let ballGeo = new THREE.SphereGeometry( 5, 20, 20 );
     let texture = new THREE.TextureLoader().load( 'assets/test.png' )
     let ballMaterial = new THREE.MeshPhongMaterial( { color: 0xFFFFFF, map: texture } )
   let  ballMesh = new THREE.Mesh( ballGeo, ballMaterial )
@@ -57,7 +57,7 @@ class Main extends React.Component{
 
   container.appendChild( renderer.domElement )
     let controls = new OrbitControls( camera, renderer.domElement );
-    var geometry = new THREE.PlaneGeometry( 20, 20, 24, 12 );
+    var geometry = new THREE.PlaneGeometry( 40, 40, 24, 12 );
             var material = new THREE.MeshBasicMaterial( {color: 0xFFFFFF, side: THREE.DoubleSide, map: texture } );
           let  plane2 = new THREE.Mesh( geometry, material );
             plane2.matrixWorldNeedsUpdate = true
@@ -69,9 +69,10 @@ class Main extends React.Component{
 composer.addPass( renderPass );
 
 var glitchPass = new GlitchPass();
+console.log(glitchPass)
 //composer.addPass( glitchPass );
 var bloomPass = new UnrealBloomPass();
-composer.addPass( bloomPass );
+//composer.addPass( bloomPass );
 const filmPass = new FilmPass(
     1.35,   // noise intensity
     1.25,  // scanline intensity
@@ -79,7 +80,7 @@ const filmPass = new FilmPass(
     false,  // grayscale
 );
 filmPass.renderToScreen = true;
-composer.addPass(filmPass);
+//composer.addPass(filmPass);
 
   function animate() {
 
