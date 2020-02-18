@@ -98,3 +98,4 @@ def draw_pastell(nx=900, ny=1600, CL=180, rshift=3):
 
 draw_pastell(nx=900, ny=1600, CL=181, rshift=3)
 draw_pastell(nx=900, ny=1600, CL=181, rshift=3)
+draw_pastell(nx=900, ny=1600, CL=181, rshift=3)
